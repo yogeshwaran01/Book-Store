@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for sub in subs %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #D1495B;">{{ sub.name }}</h5>
+          <p class="card-text">{{ sub.len() }} books are available</p>
+          <a href="books/{{ sub.url() }}" class="btn btn-primary">View Books</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock content %}

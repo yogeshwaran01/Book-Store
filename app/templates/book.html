@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <h1 class="my-4">{{ t_title }}</h1>
+            <div class="list-group">
+                {% for sub in subs %}
+                <a href="{{ sub.url() }}" class="list-group-item" style="color: #D1495B;">{{ sub.name }}</a>
+                {% endfor %}
+            </div>
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+            <br>
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <!-- <a href="{{ post.link }}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                {{ post.name }}
+                            </h4>
+                            <p class="card-text">By {{ post.author }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ post.link }}" class="btn btn-primary">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock content %}

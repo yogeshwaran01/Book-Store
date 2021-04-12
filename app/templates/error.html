@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<h3 style="text-align: center;">{{ message_1 }}</h3>
+<p style="text-align: center;">{{ message_2 }}</p>
+{% if code == 500 %}
+<a href="mailto: yogeshin247@gmail.com">
+    <p style="color: red; text-align: center;">Notify to the admin</p>
+</a> {% endif %} {% endblock content %}

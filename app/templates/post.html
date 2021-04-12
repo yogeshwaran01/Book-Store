@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-md-10 col-lg-8 mx-auto">
+
+            <!-- Title -->
+            <hr>
+
+            <!-- Date/Time -->
+            <p style="text-align: center;">{{ post.timestamp }}</p>
+
+            <hr>
+
+            <article class="article">{{ post.body|safe }}</article>
+            {% endblock content %}
+        </div>
+    </div>
+</div>

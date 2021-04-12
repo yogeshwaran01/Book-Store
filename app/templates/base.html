@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if content %}
+    <meta name="description" content="{{ content }}">
+    {% else %}
+    <meta name="description" content="Chemical Riders">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="abd">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-expand-lg navbar-dark fixed-top " style="background-color: #00798C;">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/static/logo/logos.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+                Chemical Riders</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/books">Books</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/posts">Blogs</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link moon" id="dark" href="#" onclick="darkMode(); switcher();">🌙 Dark</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="py-5 mb-5" style="background-color: #D1495B;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 text-white mt-5 mb-2" id="head" style="text-align: center;">{{ head }}</h1>
+                    <p class="lead mb-5 text-white-50"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Content -->
+    {% block content %}
+
+    {% endblock content %}
+    <br>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/darkmode.js')}}"></script>
+    {% block script %}
+
+    {% endblock script %}
+
+</body>
+
+</html>

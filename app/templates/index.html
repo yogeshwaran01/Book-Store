@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+<!-- Page Content -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+            <div class="container">
+                <img src="/static/logo/logo.png" class="align-items-center" alt="logo" style="border: 9px solid gold; border-radius: 95em"
+                    width="100%">
+                <hr class="my-4">
+                {% for note in notes %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #D1495B;">{{ note.title }}</h5>
+                        <p class="card-text">{{ note.info }}</p>
+                        <a href="{{ note.link }}" class="btn btn-primary">Open</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+<!-- /.container -->
