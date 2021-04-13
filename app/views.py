@@ -17,6 +17,8 @@ from app.utils.admin import Authenticate
 from app.utils.url_maker import make_title_from_url
 
 brand = Db_Handler.return_title()
+if brand is None:
+    brand = "Python"
 
 @app.errorhandler(404)
 def page_not_found(e):

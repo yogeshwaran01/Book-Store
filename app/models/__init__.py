@@ -14,7 +14,10 @@ from typing import Any
 class Db_Handler:
     @staticmethod
     def return_title():
-        return Title.query.all()[0].text
+        try:
+            return Title.query.all()[0].text
+        except IndexError:
+            return None
 
     @staticmethod
     def return_about():
