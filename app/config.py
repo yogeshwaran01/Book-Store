@@ -8,7 +8,7 @@ class Configuration:
 
     # SECRET_KEY = os.environ.get('SECRET_KEY')
     SECRET_KEY = "admin"
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(base_dir, "users.db")
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(base_dir, "data.db")
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASK_ADMIN_SWATCH = "cerulean"

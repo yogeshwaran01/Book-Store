@@ -10,14 +10,11 @@ app = Flask(__name__)
 app.config.from_object(Configuration)
 
 database = SQLAlchemy(app)
-migrate = Migrate(app, database)
+migrate = Migrate(app, db=database)
 
 admin = Admin(app, name="ADMIN")
 
 auth = BasicAuth(app)
 
-from .models.content import *
-from .models.books import *
-from .models.contact import *
-from .models.blogs import *
+from .models import *
 from .views import *
