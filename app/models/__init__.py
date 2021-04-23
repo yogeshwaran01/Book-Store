@@ -1,6 +1,4 @@
 from app import database as db
-from .content import Title
-from .content import About
 from .content import Note
 from .books import Subject
 from .books import Book
@@ -12,13 +10,6 @@ from typing import Any
 
 
 class Db_Handler:
-    @staticmethod
-    def return_title():
-        return Title.query.all()[0].text
-
-    @staticmethod
-    def return_about():
-        return About.query.all()[0].text
 
     @staticmethod
     def all_books_of(name: str):
