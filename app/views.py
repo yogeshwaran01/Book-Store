@@ -4,8 +4,6 @@ from flask import request
 from app import app
 from app import admin
 from app import database as db
-from app.models.content import Title
-from app.models.content import About
 from app.models.content import Note
 from app.models.books import Book
 from app.models.books import Subject
@@ -16,9 +14,9 @@ from app.models import Blogs_Manager
 from app.utils.admin import Authenticate
 from app.utils.url_maker import make_title_from_url
 
-brand = Db_Handler.return_title()
-if brand is None:
-    brand = "Python"
+
+brand = "Book Store"
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -54,7 +52,7 @@ def page_not_found(e):
 @app.route("/index")
 def index():
 
-    return render_template("index.html", t_about=Db_Handler.return_about(), head=brand, title=brand, notes=Db_Handler.return_notes())
+    return render_template("index.html", title="Book Store", head=brand ,notes=Db_Handler.return_notes())
 
 
 @app.route("/books/<sub_>")
@@ -132,8 +130,6 @@ def posts():
     )
 
 
-admin.add_view(Authenticate(Title, db.session))
-admin.add_view(Authenticate(About, db.session))
 admin.add_view(Authenticate(Subject, db.session))
 admin.add_view(Authenticate(Book, db.session))
 admin.add_view(Authenticate(Contact, db.session))
