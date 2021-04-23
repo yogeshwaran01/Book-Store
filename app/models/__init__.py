@@ -11,6 +11,7 @@ from typing import Any
 
 class Db_Handler:
 
+  
     @staticmethod
     def all_books_of(name: str):
         subs = Subject.query.filter_by(name=name).first()

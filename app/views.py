@@ -14,7 +14,9 @@ from app.models import Blogs_Manager
 from app.utils.admin import Authenticate
 from app.utils.url_maker import make_title_from_url
 
+
 brand = "Book Store"
+
 
 @app.errorhandler(404)
 def page_not_found(e):

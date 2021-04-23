@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config.from_object(Configuration)
 
 database = SQLAlchemy(app)
+
 migrate = Migrate(app, db=database)
 
 admin = Admin(app, name="ADMIN")
